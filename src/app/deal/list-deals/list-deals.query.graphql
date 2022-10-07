@@ -1,0 +1,8 @@
+query deals {
+  deals {
+    _id
+    name
+    userId
+    link
+  }
+}

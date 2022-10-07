@@ -1,0 +1,19 @@
+<form>
+    <div class="container">
+        <mat-form-field appearance="outline">
+            <mat-label>name</mat-label>
+            <input type="text" matInput [formControl]="name" required />
+            <mat-icon matSuffix>name</mat-icon>
+            <mat-error *ngIf="name.invalid">required</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>link</mat-label>
+            <input type="text" matInput [formControl]="link" required />
+            <mat-icon matSuffix>link</mat-icon>
+            <mat-error *ngIf="link.invalid">required</mat-error>
+          </mat-form-field>
+         <button type="button" mat-raised-button color="primary" (click)="addDeal()">
+    Create
+  </button>
+    </div>
+  </form>

@@ -1,0 +1,27 @@
+<!-- ---------{{dealsData}}
+  <div class="course-detail" *ngIf="dealsData">
+  {{deals$ | json}} 
+    <div *ngFor="let o of dealsData">
+    ---{{o.name}}
+   </div>   -->
+<!-- cccccccccccc{{deals$ | async}} -->
+  <div>
+ 
+  <div *ngFor="let o of (deals$ | async)">
+   ---{{o | json}}
+   <span (click)="delete(o._id)">{{o.name}}</span>
+  </div>
+</div>   
+<!-- -------{{deals | json}} -->
+    <!-- <li class="link" *ngFor="let deal of deals"> -->
+        <!-- --{{deal}} -->
+        <!-- <mat-card (click)="onLinkClick(link.url)">
+        <mat-card-title-group>
+            <mat-card-title>{{ link.title }}</mat-card-title>
+            <mat-card-subtitle>{{ link.siteName }}</mat-card-subtitle>
+            <img src="{{ link.images[0] }}" alt="" mat-card-md-image />
+        </mat-card-title-group>
+        </mat-card> -->
+    <!-- </li> -->
+ 
+

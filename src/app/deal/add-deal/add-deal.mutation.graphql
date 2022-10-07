@@ -1,0 +1,8 @@
+
+mutation addDeal($addDealData: AddDealInput!) {
+  addDeal(addDealData: $addDealData) {
+    _id
+    name
+    link
+  }
+}

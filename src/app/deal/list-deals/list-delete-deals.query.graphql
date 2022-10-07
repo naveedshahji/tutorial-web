@@ -1,0 +1,5 @@
+mutation deleteDeals($deleteDeals: DeleteDealInput!){
+  deleteDeals(deleteDeals: $deleteDeals) {
+    _id
+  }
+}
