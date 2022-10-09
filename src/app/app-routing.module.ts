@@ -27,12 +27,8 @@ const routes: Routes = [
     component: AddDealComponent,
   },
   {
-    path: 'list',
-    component: ListDealsComponent,
-  },
-  {
     path: '',
-    component: HomeComponent,
+    component: ListDealsComponent,
   },
   {
     path: '**',

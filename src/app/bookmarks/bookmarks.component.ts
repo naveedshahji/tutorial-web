@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core'; 
 import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { Bookmark, BookmarksGQL } from '../../generated-types';
@@ -14,7 +13,6 @@ export class BookmarksComponent implements OnInit {
   bookmarks$: Observable<Bookmark[]>;
 
   constructor(
-    private readonly dialog: MatDialog,
     private readonly bookmarksGql: BookmarksGQL,
     private readonly router: Router
   ) {}
@@ -27,7 +25,7 @@ export class BookmarksComponent implements OnInit {
   }
 
   onFabClick() {
-    this.dialog.open(CreateBookmarkComponent);
+    //this.dialog.open(CreateBookmarkComponent);
   }
 
   onBookmarkClick(bookmarkId: string) {

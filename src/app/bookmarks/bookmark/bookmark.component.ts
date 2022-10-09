@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core'; 
 import { ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs';
 import {
@@ -22,8 +21,7 @@ export class BookmarkComponent implements OnInit {
 
   constructor(
     private readonly route: ActivatedRoute,
-    private readonly bookmarkGql: BookmarkGQL,
-    private readonly dialog: MatDialog,
+    private readonly bookmarkGql: BookmarkGQL, 
     private readonly linksGql: LinksGQL
   ) {}
 
@@ -46,9 +44,9 @@ export class BookmarkComponent implements OnInit {
   }
 
   onAdd() {
-    this.dialog.open(AddLinkComponent, {
-      data: { bookmark: this.bookmark },
-    });
+    // this.dialog.open(AddLinkComponent, {
+    //   data: { bookmark: this.bookmark },
+    // });
   }
 
   onLinkClick(url: string) {

@@ -1,19 +1,80 @@
-<form>
+<!-- <form>
     <div class="container">
-        <mat-form-field appearance="outline">
-            <mat-label>name</mat-label>
-            <input type="text" matInput [formControl]="name" required />
-            <mat-icon matSuffix>name</mat-icon>
-            <mat-error *ngIf="name.invalid">required</mat-error>
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>link</mat-label>
-            <input type="text" matInput [formControl]="link" required />
-            <mat-icon matSuffix>link</mat-icon>
-            <mat-error *ngIf="link.invalid">required</mat-error>
-          </mat-form-field>
-         <button type="button" mat-raised-button color="primary" (click)="addDeal()">
+        <div appearance="outline">
+            <label>name</label>
+            <input type="text" [formControl]="name" required />
+            <div>name</div>
+            <div *ngIf="name.invalid">required</div>
+          </div>
+          <div appearance="outline">
+            <label>link</label>
+            <input type="text" [formControl]="link" required />
+            <div>link</div>
+            <div *ngIf="link.invalid">required</div>
+          </div>
+         <button type="button"  color="primary" (click)="addDeal()">
     Create
   </button>
     </div>
+  </form> -->
+
+  <form [formGroup]="lForm">
+    <div class="container-xxl my-md-4 bd-layout mt-5">
+      <div class="alert alert-primary" role="alert">
+        Add new link, we will review and add it in list once approved by our admin team!
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <select class="form-select" formControlName="lname" id="sel1" name="sellist1">
+          <option>Angular</option>
+          <option>React</option>
+          <option>Vue</option>
+          <option>Python</option>
+          <option>Java</option>
+          <option>C#</option>
+        </select>
+        <!-- <input type="text" formControlName="lname" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }">
+        <div *ngIf="submitted && f.lname.errors" class="invalid-feedback">
+          <div *ngIf="f.lname.errors.required">name is required</div>
+          <div *ngIf="f.lname.errors?.minlength">Please write a valid title</div>
+          <div *ngIf="f.lname.errors?.maxlength">You can't write more than 120 characters</div>
+        </div> -->
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Link</label>
+        <input type="text" formControlName="link" required class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.link.errors }">
+        <div *ngIf="submitted && f.link.errors" class="invalid-feedback">
+          <div *ngIf="f.link.errors.required">link is required</div>
+        </div>
+      </div>
+      <!-- <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div> -->
+      <button type="button" class="btn btn-primary" (click)="addDeal(lForm.value)">Create</button>
+    </div>
   </form>
+
+  <div class="modal" id="sModal">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+	  
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">Saved</h4>
+			  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+			</div>
+	  
+			<!-- Modal body -->
+			<div class="modal-body">
+			  Save succesfully
+			</div>
+	  
+			<!-- Modal footer -->
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+			</div>
+	  
+		  </div>
+		</div>
+	  </div>

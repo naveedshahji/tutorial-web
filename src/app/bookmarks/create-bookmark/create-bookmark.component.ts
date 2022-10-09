@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
 import { BookmarksDocument, CreateBookmarkGQL } from '../../../generated-types';
 
 @Component({
@@ -13,7 +12,6 @@ export class CreateBookmarkComponent implements OnInit {
 
   constructor(
     private readonly createBookmarkGql: CreateBookmarkGQL,
-    private readonly dialogRef: MatDialogRef<CreateBookmarkComponent>
   ) {}
 
   ngOnInit(): void {}
@@ -40,7 +38,7 @@ export class CreateBookmarkComponent implements OnInit {
         }
       )
       .subscribe(() => {
-        this.dialogRef.close();
+        //this.dialogRef.close();
       });
   }
 }

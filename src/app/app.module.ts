@@ -14,13 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeModule } from './home/home.module';
 import { BookmarkModule } from './bookmarks/bookmark/bookmark.module';
 import { FooterComponent } from './footer/footer.component';
-import { AddDealComponent } from './deal/add-deal/add-deal.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AddDealComponent } from './deal/add-deal/add-deal.component'; 
 import { ListDealsComponent } from './deal/list-deals/list-deals.component';
-
+import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent, FooterComponent, AddDealComponent, ListDealsComponent],
   imports: [
@@ -33,9 +29,6 @@ import { ListDealsComponent } from './deal/list-deals/list-deals.component';
     SignUpModule,
     HomeModule,
     BookmarkModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
     ReactiveFormsModule,
   ],
   providers: [

@@ -1,20 +1,20 @@
 <div class="container">
   <h1>Profile</h1>
-  <mat-form-field appearance="outline">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput [formControl]="email" required />
-    <mat-icon matSuffix>email</mat-icon>
-    <mat-error *ngIf="email.invalid">{{ getEmailErrorMessage() }}</mat-error>
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Password</mat-label>
-    <input type="password" matInput [formControl]="password" required />
-    <mat-icon matSuffix>lock</mat-icon>
-    <mat-error *ngIf="password.invalid">{{
+  <div appearance="outline">
+    <label>Email</label>
+    <input type="email"   [formControl]="email" required />
+    <div>email</div>
+    <div *ngIf="email.invalid">{{ getEmailErrorMessage() }}</div>
+  </div>
+  <div appearance="outline">
+    <label>Password</label>
+    <input type="password"   [formControl]="password" required />
+    <div>lock</div>
+    <div *ngIf="password.invalid">{{
       getPasswordErrorMessage()
-    }}</mat-error>
-  </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onSubmit()">
+    }}</div>
+  </div>
+  <button   color="primary" (click)="onSubmit()">
     {{ submitLabel }}
   </button>
 </div>
